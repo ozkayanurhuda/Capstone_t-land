@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signin_nav"
+    app:startDestination="@id/signinFragment">
+
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.nurozkaya.capstone_t_land.fragments.SigninFragment"
+        android:label="SigninFragment" >
+        <action
+            android:id="@+id/registeraGecis"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/signinToUpload"
+            app:destination="@id/uploadTisortFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.nurozkaya.capstone_t_land.fragments.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/uploadTisortFragment"
+        android:name="com.nurozkaya.capstone_t_land.fragments.UploadTisortFragment"
+        android:label="fragment_upload_tisort"
+        tools:layout="@layout/fragment_upload_tisort" />
+</navigation>
