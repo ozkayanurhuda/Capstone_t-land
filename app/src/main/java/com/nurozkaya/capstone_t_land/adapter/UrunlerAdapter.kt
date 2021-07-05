@@ -17,9 +17,9 @@ class UrunlerAdapter (var mContext:Context, var tisortList:List<Tisortler>, var 
             :RecyclerView.ViewHolder(cardTasarimBinding.root) {
 
             var cardView:CardTasarimBinding=cardTasarimBinding
-            init {
-                this.cardView=cardTasarimBinding
-            }
+//            init {
+//                this.cardView=cardTasarimBinding
+//            }
 
 
             }

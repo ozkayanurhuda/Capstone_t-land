@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="34sp"
+            android:textSize="30sp"
             tools:layout_editor_absoluteX="205dp"
             tools:layout_editor_absoluteY="11dp"
             tools:text="T-Land" />

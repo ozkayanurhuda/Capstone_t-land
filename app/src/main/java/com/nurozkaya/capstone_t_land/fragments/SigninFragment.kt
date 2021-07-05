@@ -27,7 +27,12 @@ class SigninFragment :Fragment(){
         tasarim= DataBindingUtil.inflate(inflater, R.layout.fragment_signin, container, false)
         tasarim.signinFragment=this
 
-        //t_ekle
+        //t_ekle ekraına gecis
+        tasarim.imageView.setOnClickListener {
+            Log.e("Add Tisort","clicked")
+            val gecis=SigninFragmentDirections.signinToUpload()
+            Navigation.findNavController(it).navigate(gecis)
+        }
 
 
         //kayıtola tıklarsa

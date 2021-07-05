@@ -21,11 +21,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(tasarim.bottomNav,navHostFragment.navController)
 
 
-        setSupportActionBar(tasarim.toolbar)
-        setupActionBarWithNavController(navHostFragment.navController)
-        tasarim.toolbar.setupWithNavController(navHostFragment.navController)
-
-        tasarim.toolbar.title=""
+        tasarim.toolbarBaslik.text="T-Land"
 
 
 
