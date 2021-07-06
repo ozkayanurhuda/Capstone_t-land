@@ -37,6 +37,7 @@ class SigninFragment :Fragment(){
 
         //kayıtola tıklarsa
         tasarim.buttonRegisterS.setOnClickListener {
+            Log.e("Register", "clicked")
             val gecis=SigninFragmentDirections.registeraGecis()
             Navigation.findNavController(it).navigate(gecis)
         }
@@ -46,22 +47,21 @@ class SigninFragment :Fragment(){
             viewModel.signin(tasarim.editTextEmail.text.toString(), tasarim.editTextPassword.text.toString())
             viewModel.loggedUser.observe(viewLifecycleOwner, {
                 val currentUser=it
-                println("gelenuser"+currentUser.toString())
+                println("gelenuser$currentUser")
                 val userDeger=it.deger
 
-                println("User Deger" +userDeger)
+                println("User Deger$userDeger")
 
                 if(userDeger==1) {
                     val intent= Intent(requireContext(),MainActivity::class.java)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(requireContext(),"No user ", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(),"No user found! ", Toast.LENGTH_LONG).show()
                 }
             })
 
 
         }
-
 
         return tasarim.root
     }

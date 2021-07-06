@@ -9,7 +9,7 @@ import com.nurozkaya.capstone_t_land.retrofit.ApiUtils
 import com.nurozkaya.capstone_t_land.retrofit.UsersDaoInterface
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
+import retrofit2.Callback
 
 class UserdaoRepos {
     private val usersListesi:MutableLiveData<List<Users>> =MutableLiveData()
@@ -22,17 +22,16 @@ class UserdaoRepos {
         return userDeger
     }
 
-    fun getUsersListesi():MutableLiveData<List<Users>>{
-        return usersListesi
-    }
-
     fun getLoggedUser():MutableLiveData<Users>{
         return loggedUser
     }
+
 //getuser
     fun girisYap(email:String,password:String) {
-        udaoi.giris_yap(email,password).enqueue(object : retrofit2.Callback<UsersCevap> {
-            override fun onResponse(call: Call<UsersCevap>, response: Response<UsersCevap>) {
+        udaoi.giris_yap(email,password).enqueue(object : Callback<UsersCevap> {
+            override fun onResponse(call: Call<UsersCevap>?, response: Response<UsersCevap>) {
+                Log.e("Başarı", response.body().users.toString())
+
                 val liste=response.body().users
                 usersListesi.value=liste
 
@@ -53,7 +52,7 @@ class UserdaoRepos {
     //add user
     fun uyeOl(email:String, password:String,fullName:String,phone:String) {
         udaoi.uye_ol(email, password, fullName, phone)
-            .enqueue(object: retrofit2.Callback<CRUDCevap> {
+            .enqueue(object: Callback<CRUDCevap> {
                 override fun onResponse(call: Call<CRUDCevap>?, response: Response<CRUDCevap>) {
                     Log.e("Başarı", response.body().success.toString())
                     Log.e("Mesaj",response.body().message)

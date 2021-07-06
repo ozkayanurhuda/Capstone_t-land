@@ -29,13 +29,14 @@ class UploadTisortFragment : Fragment() {
         //uploadTisortFragment.tisortEkleB(saticiAdiText.getText().toString(),tisortAdiText.getText().toString(),fiyatText.getText().toString(),aciklamaText.getText().toString(),imgUrlText.getText().toString())}"
 
         tasarim.toolbarUploadTisort.title=""
+
         tasarim.tisortEkleButton.setOnClickListener {
-            tisortEkleB(saticiAdiText.getText().toString(),tisortAdiText.getText().toString(),fiyatText.getText().toString(),aciklamaText.getText().toString(),imgUrlText.getText().toString())
+            uploadTisortButton(saticiAdiText.getText().toString(),tisortAdiText.getText().toString(),fiyatText.getText().toString(),aciklamaText.getText().toString(),imgUrlText.getText().toString())
         }
         return tasarim.root
     }
 
-    fun tisortEkleB(satici_adi:String,name:String, price:String, description:String, img_url:String) {
+    fun uploadTisortButton(satici_adi:String,name:String, price:String, description:String, img_url:String) {
         viewModel.uploadTisort(satici_adi,name,price,description,img_url)
     }
 

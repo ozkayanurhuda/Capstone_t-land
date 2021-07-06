@@ -8,7 +8,8 @@
     <fragment
         android:id="@+id/signinFragment"
         android:name="com.nurozkaya.capstone_t_land.fragments.SigninFragment"
-        android:label="SigninFragment" >
+        android:label="SigninFragment"
+        tools:layout="@layout/fragment_signin">
         <action
             android:id="@+id/registeraGecis"
             app:destination="@id/registerFragment" />
@@ -20,7 +21,11 @@
         android:id="@+id/registerFragment"
         android:name="com.nurozkaya.capstone_t_land.fragments.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/registerToSignin"
+            app:destination="@id/signinFragment" />
+    </fragment>
     <fragment
         android:id="@+id/uploadTisortFragment"
         android:name="com.nurozkaya.capstone_t_land.fragments.UploadTisortFragment"

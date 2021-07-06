@@ -39,8 +39,8 @@ class UrunlerAdapter (var mContext:Context, var tisortList:List<Tisortler>, var 
 //
 //        }
 
-        val tisortResim_url=tisort.urun_gorsel_url
-        Picasso.get().load(tisortResim_url).into(holder.cardView.tisortResim)
+        val url=tisort.urun_gorsel_url
+        Picasso.get().load(url).into(holder.cardView.tisortResim)
 
     }
 
